@@ -67,7 +67,7 @@ TVector<ValType>::TVector(int s, int si) {
         for (int i(0); i < Size; i++)
         pVector[i] = 0;
     } else {
-        throw 1;
+        throw std::logic_error("");
     }
 } /*-------------------------------------------------------------------------*/
 
@@ -90,7 +90,7 @@ ValType& TVector<ValType>::operator[](int pos) {
     if ((pos >= StartIndex) && (pos < StartIndex + Size))
         return (pVector[pos - StartIndex]);
     else
-        throw 1;
+        throw std::logic_error("");
 } /*-------------------------------------------------------------------------*/
 
 template <class ValType>  // сравнение
@@ -169,7 +169,7 @@ TVector<ValType> TVector<ValType>::operator+(const TVector<ValType> &v) {
         resVector.pVector[i] = pVector[i] + v.pVector[i];
         return resVector;
     } else {
-        throw 1;
+        throw std::logic_error("");
     }
 } /*-------------------------------------------------------------------------*/
 
@@ -181,7 +181,7 @@ TVector<ValType> TVector<ValType>::operator-(const TVector<ValType> &v) {
         resVector.pVector[i] = pVector[i] - v.pVector[i];
         return resVector;
     } else {
-        throw 1;
+        throw std::logic_error("");
     }
 } /*-------------------------------------------------------------------------*/
 
@@ -193,7 +193,7 @@ ValType TVector<ValType>::operator*(const TVector<ValType> &v) {
         res += pVector[i] * v.pVector[i];
         return res;
     } else {
-        throw 1;
+        throw std::logic_error("");
     }
 } /*-------------------------------------------------------------------------*/
 
@@ -230,7 +230,7 @@ TMatrix<ValType>::TMatrix(int s): TVector<TVector<ValType> >(s) {
         for (int i = 0; i < s; ++i)
         pVector[i] = TVector<ValType>(s - i, i);
     } else {
-        throw 1;
+        throw std::logic_error("");
     }
 } /*-------------------------------------------------------------------------*/
 
